@@ -1,0 +1,65 @@
+{% extends "home.html" %} {% block content %}
+
+<style>
+  .main {
+    padding: 70px 500px 30px 500px;
+  }
+
+  .media-body{
+    width: 50%;
+    border: 3px solid rgb(110, 110, 110);
+    padding: 10px;
+  }
+</style>
+
+<div class="main">
+  <h2>Shop List:</h2>
+  <br />
+  {% for shop in shoplist %}
+  <article class="media content-section">
+    <div class="media-body">
+      <div class="article-metadata">
+        <a class="mr-2">Resturant id:{{ shop.SID }}</a>
+      </div>
+      <h2><a class="article-title">{{ shop.Shopname }}</a></h2>
+      <p class="article-content">Shop website URL:{{ shop.Shopwebsite }}</p>
+    </div>
+  </article>
+  <br />
+  <!--The form will only appear when the user is logged in-->
+  {% endfor %} {% if loginstate == true %}
+
+  <div class="regis">
+    <form method="POST">
+      <div class="form-group">
+        <label for="sid">Shop id:</label>
+        <input type="text" id="shopid" name="bsid" placeholder="1" required/>
+      </div>
+      <div class="form-group">
+        <label for="sid">date:</label>
+        <input type="number" id="dateid" name="bdate" placeholder="1" min="1" max="31" required/>
+      </div>
+      <div class="form-group">
+        <label for="sid">Month:</label>
+        <input type="number" id="monthid" name="bmonth" placeholder="1" min="1" max="12" required/>
+      </div>
+      <div class="form-group">
+        <label for="booktime">Desired time:(24H format,in Hours)</label>
+        <input
+          type="number"
+          id="booktime"
+          name="btime"
+          min="09"
+          max="21"
+          placeholder="18"
+          required
+        />
+      </div>
+      <div class="form-group">
+          <button type="submit">Submit</button> 
+      </div>
+  </div>
+
+  {% endif%}
+</div>
+{% endblock content%}

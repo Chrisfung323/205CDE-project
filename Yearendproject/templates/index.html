@@ -1,0 +1,111 @@
+{% extends "home.html" %} {% block content %}
+
+<style>
+  .banner {
+    background-color: rgb(103, 84, 110);
+    width: auto;
+    padding: 25px;
+    height: 553px;
+    display: flex;
+    align-content: center;
+  }
+
+  .bannerimg {
+    margin-left: 35%;
+  }
+
+  .img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .main {
+    text-align: center;
+    padding: 20px 0 0 30px;
+  }
+
+  .userdisplayer {
+    text-align: left;
+    padding: 20px 100px 0px 100px;
+  }
+</style>
+<div class="banner">
+  <div class="bannerimg"><img src="/static/banner.jpg" /></div>
+</div>
+{% if loginstate == true%}
+<div class="userdisplayer">
+  <h3>Welcome,{{userdisplay}}</h3>
+</div>
+{% endif %}
+<div class="main">
+  <h2>Welcome to what to eat</h2>
+  <div>
+    Welcome to What to eat!We aim to offers the quickest and simplist way of
+    table booking ,scroll down to find out more!
+  </div>
+</div>
+<div class="row">
+  <div
+    class="col-sm-6"
+    style="
+      background-color: rgb(214, 214, 214);
+      padding: 100px;
+      margin: auto;
+      align-content: center;
+      height: 500px;
+      font-size: 24px;
+    "
+  >
+    Here in what to eat, Our aim is to affer the most efficient and the most
+    user friendly experience to our users. Covering all sorts of cusine and
+    dining here.With an account you can instantly start to book your favourite
+    retsaruant right away with a few simple click!
+    <a class="ml-2" href="{{ url_for('register') }}"
+      >Click here to sign up today!</a
+    >
+  </div>
+  <div
+    class="col-sm-6"
+    style="
+      background-color: rgb(179, 179, 179);
+      padding: 50px;
+      margin: auto;
+      align-content: center;
+      height: 500px;
+    "
+  >
+    <img src="https://images.everydayhealth.com/images/diet-nutrition/what-is-a-plant-based-diet-beginners-guide-food-list-benefits-722x406.jpg?sfvrsn=3d8f397_0">
+  </div>
+</div>
+<div class="row">
+  <div
+    class="col-sm-7"
+    style="
+      background-color: rgb(122, 122, 122);
+      padding: 75px 200px 75px 200px;
+      margin: auto;
+      align-content: center;
+      height: 600px;
+    "
+  >
+    <img src="https://images.immediate.co.uk/production/volatile/sites/30/2020/08/one-pot-paneer-curry-pie-3ad758b.jpg?quality=90&resize=500%2C454">
+  </div>
+  <div
+    class="col-sm-5"
+    style="
+      background-color: rgb(221, 221, 221);
+      padding: 100px;
+      margin: auto;
+      align-content: center;
+      height: 600px;
+      font-size: 24px;
+    "
+  >
+    If you are a shop and would like to be listed in one of our shop list feel
+    free to visit our about page to contact us and register!
+    <a href="{{ url_for('about') }}">Click here to go to about page</a>
+  </div>
+</div>
+
+{% endblock content%}
