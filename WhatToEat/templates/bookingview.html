@@ -1,0 +1,33 @@
+{% extends "home.html" %} {% block content %}
+<style>
+  .main {
+    padding: 70px 200px 30px 200px;
+  }
+</style>
+<div class="main">
+  <!--bookings-->
+  <h4>List of bookings:</h4>
+  <br />
+  <div class="row">
+    <div class="col-sm-1" style="outline-style: solid">BID</div>
+    <div class="col-sm-1" style="outline-style: solid">UID</div>
+    <div class="col-sm-1" style="outline-style: solid">SID</div>
+    <div class="col-sm-2" style="outline-style: solid">Time</div>
+    <div class="col-sm-2" style="outline-style: solid">date</div>
+    <div class="col-sm-3" style="outline-style: solid">month</div>
+    <div class="col-sm-2" style="outline-style: solid">year</div>
+  </div>
+  {%for booking in bookinglist%}
+  <div class="row">
+    <div class="col-sm-1" style="outline-style: solid">{{booking.BID}}</div>
+    <div class="col-sm-1" style="outline-style: solid">{{booking.UID}}</div>
+    <div class="col-sm-1" style="outline-style: solid">{{booking.SID}}</div>
+    <div class="col-sm-2" style="outline-style: solid">{{booking.Time}}</div>
+    <div class="col-sm-2" style="outline-style: solid">{{booking.date}}</div>
+    <div class="col-sm-3" style="outline-style: solid">{{booking.month}}</div>
+    <div class="col-sm-2" style="outline-style: solid">{{booking.year}}</div>
+  </div>
+  {% endfor %}
+  <br />
+</div>
+{% endblock content %}
